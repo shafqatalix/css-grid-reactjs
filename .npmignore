@@ -1,0 +1,7 @@
+node_moduels/
+.vscode/
+.idea/
+.storybook/
+src/
+*.js
+tsconfig.json

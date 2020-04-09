@@ -1,0 +1,73 @@
+{
+  "name": "css-grid-reactjs",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "purge": "rimraf dist",
+    "internal": "webpack --config webpack.config.js",
+    "build": "npm run purge && npm run internal -- -p",
+    "dev": "npm run internal",
+    "storybook": "start-storybook -p 6884",
+    "lint": "tslint --format stylish --project tsconfig.json \"src/**/*.ts?(x)\"",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1",
+    "postcss": "7.0.27",
+    "autoprefixer": "^9.7.6",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "@types/storybook__addon-actions": "^5.2.1",
+    "@types/storybook__react": "^5.2.1",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addon-storysource": "^5.3.18",
+    "@storybook/addon-viewport": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/core": "^5.3.18",
+    "@storybook/react": "^5.3.18",
+    "@storybook/source-loader": "^5.3.18",
+    "mini-css-extract-plugin": "0.8.0",
+    "@types/jest": "^25.2.1",
+    "typescript": "^3.8.3",
+    "ts-loader": "^6.2.2",
+    "rimraf": "3.0.2",
+    "@babel/core": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
+    "jest-fetch-mock": "^3.0.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "1.19.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "storybook-react-router": "^1.0.7",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^2.3.5",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11",
+    "maintained node versions"
+  ],
+  "repository": {
+    "url": "https://github.com/xalisys/css-grid-reactjs"
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "linters": {
+      "*.{js,ts,tsx,json,scss}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  }
+}

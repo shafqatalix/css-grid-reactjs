@@ -1,6 +1,10 @@
+.storybook/
+.story.tsx
 # Logs
 logs
 *.log
+*.lock
+*-lock.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
