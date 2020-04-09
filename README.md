@@ -3,7 +3,6 @@
 React layout component based on [CSS Grid Layout]
 
 [![Build Status][travis-badge]][travis]
-[![GitHub][stars]][gh]
 
 [travis-badge]: https://travis-ci.com/xalisys/css-grid-reactjs.svg?branch=master
 [travis]: https://travis-ci.com/github/xalisys/css-grid-reactjs
@@ -14,7 +13,6 @@ npm i css-grid-reacjs
 
 ```jsx
 // Example usage
-import React from "react";
 //TODO
 ```
 
@@ -33,7 +31,7 @@ See http://caniuse.com/#feat=css-grid
 
 ## Related
 
-- [spec]: https://www.w3.org/TR/css-grid-1/
+- [CSS Grid Spec](https://www.w3.org/TR/css-grid-2/)
 - [React CSS Grid](https://github.com/jxnblk/react-css-grid)
 
 [MIT License](LICENSE.md)

@@ -1,5 +1,4 @@
-.storybook/
-.story.tsx
+*.sh
 # Logs
 logs
 *.log
