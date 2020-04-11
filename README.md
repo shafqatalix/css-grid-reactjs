@@ -1,6 +1,6 @@
 # CSS-Grid-ReactJS
 
-React layout component based on [CSS Grid Layout]
+React layout component based on [CSS Grid Spec](https://www.w3.org/TR/css-grid-2/)
 
 [![Build Status][travis-badge]][travis]
 
@@ -8,22 +8,34 @@ React layout component based on [CSS Grid Layout]
 [travis]: https://travis-ci.com/github/xalisys/css-grid-reactjs
 
 ```sh
-npm i css-grid-reacjs
+npm i css-grid-reactjs
+or
+yarn add css-grid-reactjs
 ```
 
 ```jsx
-// Example usage
-//TODO
+<Grid>
+    <HeaderRow>
+        <HeaderCell onSort={onSort} dataField="name">
+            Name
+        </HeaderCell>
+        <HeaderCell dataField="address">Address</HeaderCell>
+    </HeaderRow>
+    <Row>
+        <Cell>John Doe</Cell>
+        <Cell>23 Randolph St</Cell>
+    </Row>
+    <Row>
+        <Cell>Dexter White</Cell>
+        <Cell>918 Windsor Avenue</Cell>
+    </Row>
+</Grid>
 ```
 
 ## Features
 
-- Responsive grid layout with zero media queries
-- Simple API
-
-## Components
-
-- TODO
+-   Responsive grid layout with zero media queries
+-   Simple API
 
 ## Browser Support
 
@@ -31,7 +43,7 @@ See http://caniuse.com/#feat=css-grid
 
 ## Related
 
-- [CSS Grid Spec](https://www.w3.org/TR/css-grid-2/)
-- [React CSS Grid](https://github.com/jxnblk/react-css-grid)
+-   [CSS Grid Spec](https://www.w3.org/TR/css-grid-2/)
+-   [React CSS Grid](https://github.com/jxnblk/react-css-grid)
 
 [MIT License](LICENSE.md)

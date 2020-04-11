@@ -4,7 +4,7 @@ import { HeaderRow, HeaderCell, Cell, Grid, Row } from ".."; //"css-grid-reactjs
 
 const BasicExample = () => {
     const onSort = (field: string) => {
-        console.log(field);
+        console.log(`onSort has been called for data-field:${field}`);
     };
     return (
         <Grid>
