@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./grid.scss";
+import { GridContext } from "../context";
 
-export const Grid = (props: any) => {
-  return <div className={styles.grid}>Grid</div>;
+export type GridProps = {
+  className?: string;
+  children?: any;
+};
+
+export const Grid = (props: GridProps) => {
+  const [columnCount, setColumnCount] = useState<number>(0);
+  const { children, className } = props;
+  const classes = `${styles.grid} ${className || ""}`;
+
+  return (
+    <GridContext.Provider value={{ columnCount, setColumnCount }}>
+      <div className={classes}>{children}</div>
+    </GridContext.Provider>
+  );
 };

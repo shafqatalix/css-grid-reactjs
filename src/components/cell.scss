@@ -1,0 +1,17 @@
+.cell {
+  padding: 1rem;
+  word-break: break-word;
+  &:not(:last-child) {
+    border-right: 1px solid #ddd;
+  }
+}
+
+.header-cell {
+  &:not(:last-child) {
+    border-right: 1px solid #ddcfcf;
+  }
+}
+
+.sortable {
+  cursor: pointer;
+}

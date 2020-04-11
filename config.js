@@ -4,10 +4,11 @@ const CSSModuleLoader = {
   loader: "css-loader",
   options: {
     sourceMap: true,
+    localsConvention: "camelCase",
     modules: {
-      localIdentName: "[path][name]__[local]--[hash:base64:5]",
-    },
-  },
+      localIdentName: "[path][name]__[local]--[hash:base64:5]"
+    }
+  }
 };
 
 const postCSSLoader = {
@@ -15,11 +16,11 @@ const postCSSLoader = {
   options: {
     ident: "postcss",
     sourceMap: true,
-    plugins: () => [autoprefixer()],
-  },
+    plugins: () => [autoprefixer()]
+  }
 };
 
 module.exports = {
   CSSModuleLoader,
-  postCSSLoader,
+  postCSSLoader
 };
