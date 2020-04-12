@@ -5,3 +5,8 @@ node_moduels/
 src/
 *.js
 tsconfig.json
+*.sh
+*-it.json
+*.yml
+*rc
+*.css.map
