@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import styles from "./grid.scss";
 import { GridContext } from "../context";
 import { GridProps } from "./types";
+import { makeClassName } from "../utils";
 
 export const Grid = (props: GridProps) => {
     const { children, className, overrideStyles } = props;
 
     const [columnCount, setColumnCount] = useState<number>(0);
-    const classes = `${styles.grid} ${className || ""}`;
+    const classes = makeClassName([styles.grid, className]);
 
     return (
         <GridContext.Provider value={{ columnCount, setColumnCount }}>
