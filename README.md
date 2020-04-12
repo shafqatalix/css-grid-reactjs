@@ -39,17 +39,19 @@ import "css-grid-reactjs/dist/lib.css";
 
 ## Features
 
--   No dependencies.
+-   No external dependencies.
 -   Purely based on css-grid spec.
 -   No media queries.
+-   FUlly declarative.
 -   Simple and liner API.
 -   Responsive by default without any additional css.
 -   Allow full customization of styles.
+-   Supports up to 25 grid columns without breaking responsiveness.
 
 ## TODO
 
 -   Improve Docs & Examples
--
+-   Handle more then 25 columns.
 
 ## Browser Support
 

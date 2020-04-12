@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import styles from "./grid.scss";
 import { GridContext } from "../context";
-
-export type GridProps = {
-  className?: string;
-  children?: any;
-};
+import { GridProps } from "./types";
 
 export const Grid = (props: GridProps) => {
-  const [columnCount, setColumnCount] = useState<number>(0);
-  const { children, className } = props;
-  const classes = `${styles.grid} ${className || ""}`;
+    const { children, className, overrideStyles } = props;
 
-  return (
-    <GridContext.Provider value={{ columnCount, setColumnCount }}>
-      <div className={classes}>{children}</div>
-    </GridContext.Provider>
-  );
+    const [columnCount, setColumnCount] = useState<number>(0);
+    const classes = `${styles.grid} ${className || ""}`;
+
+    return (
+        <GridContext.Provider value={{ columnCount, setColumnCount }}>
+            <div style={overrideStyles} className={classes}>
+                {children}
+            </div>
+        </GridContext.Provider>
+    );
 };
