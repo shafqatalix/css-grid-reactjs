@@ -20,12 +20,10 @@ export const HeaderCell = (props: HeaderCellProps) => {
     const classes = makeClassName([styles.cell, styles.headerCell, className, sortable]);
 
     const onClick = useCallback(
-        (e: any) => {
-            if (sortable) {
-                onSort(dataField);
-            }
+        (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            sortable && onSort(dataField);
         },
-        [sortable]
+        [sortable, dataField]
     );
 
     return (
