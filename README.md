@@ -35,10 +35,21 @@ import "css-grid-reactjs/dist/lib.css";
 </Grid>;
 ```
 
+[Code Sandbox Example](https://codesandbox.io/s/exciting-pine-rgxn5?file=/src/App.js)
+
 ## Features
 
--   Responsive grid layout with zero media queries
--   Simple API
+-   No dependencies.
+-   Purely based on css-grid spec.
+-   No media queries.
+-   Simple and liner API.
+-   Responsive by default without any additional css.
+-   Allow full customization of styles.
+
+## TODO
+
+-   Improve Docs & Examples
+-
 
 ## Browser Support
 
