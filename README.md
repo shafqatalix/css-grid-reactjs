@@ -11,6 +11,8 @@ React layout component based on [CSS Grid Spec](https://www.w3.org/TR/css-grid-2
 
 [API Styleguide](https://xalisys.github.io/css-grid-reactjs/styleguide/index.html)
 
+[Code Sandbox Example](https://codesandbox.io/s/exciting-pine-rgxn5?file=/src/App.js)
+
 ```sh
 npm i css-grid-reactjs
 or
@@ -42,8 +44,6 @@ const onSort = (field: string) => {
     </Row>
 </Grid>;
 ```
-
-[Code Sandbox Example](https://codesandbox.io/s/exciting-pine-rgxn5?file=/src/App.js)
 
 ## Features
 

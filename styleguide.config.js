@@ -11,9 +11,6 @@ module.exports = {
     },
     usageMode: "expand",
     webpackConfig: {
-        output: {
-            path: path.resolve("docsx"),
-        },
         module: {
             rules: [
                 {
