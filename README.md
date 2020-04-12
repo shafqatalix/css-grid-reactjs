@@ -7,6 +7,10 @@ React layout component based on [CSS Grid Spec](https://www.w3.org/TR/css-grid-2
 [travis-badge]: https://travis-ci.com/xalisys/css-grid-reactjs.svg?branch=master
 [travis]: https://travis-ci.com/github/xalisys/css-grid-reactjs
 
+[Storybook Examples](https://xalisys.github.io/css-grid-reactjs/docs/index.html)
+
+[API Styleguide](https://xalisys.github.io/css-grid-reactjs/styleguide/index.html)
+
 ```sh
 npm i css-grid-reactjs
 or
@@ -63,7 +67,6 @@ See http://caniuse.com/#feat=css-grid
 
 ## Related
 
--   [CSS Grid Spec](https://www.w3.org/TR/css-grid-2/)
 -   [React CSS Grid](https://github.com/jxnblk/react-css-grid)
 
 [MIT License](LICENSE.md)
