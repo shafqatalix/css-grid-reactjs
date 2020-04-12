@@ -14,6 +14,9 @@ yarn add css-grid-reactjs
 ```
 
 ```jsx
+import { HeaderRow, HeaderCell, Cell, Grid, Row } from "css-grid-reactjs";
+import "css-grid-reactjs/dist/lib.css";
+
 <Grid>
     <HeaderRow>
         <HeaderCell onSort={onSort} dataField="name">
@@ -29,7 +32,7 @@ yarn add css-grid-reactjs
         <Cell>Dexter White</Cell>
         <Cell>918 Windsor Avenue</Cell>
     </Row>
-</Grid>
+</Grid>;
 ```
 
 ## Features
