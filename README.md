@@ -17,6 +17,10 @@ yarn add css-grid-reactjs
 import { HeaderRow, HeaderCell, Cell, Grid, Row } from "css-grid-reactjs";
 import "css-grid-reactjs/dist/lib.css";
 
+const onSort = (field: string) => {
+    console.log(`onSort has been called for data-field:${field}`);
+};
+
 <Grid>
     <HeaderRow>
         <HeaderCell onSort={onSort} dataField="name">
@@ -42,7 +46,7 @@ import "css-grid-reactjs/dist/lib.css";
 -   No external dependencies.
 -   Typescript support.
 -   No media queries, purely based on css-grid spec.
--   FUlly declarative.
+-   Fully declarative.
 -   Simple and liner API.
 -   Responsive by default without any additional css.
 -   Allow full customization of styles.
