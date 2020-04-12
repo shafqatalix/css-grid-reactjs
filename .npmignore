@@ -3,6 +3,7 @@ node_moduels/
 .idea/
 .storybook/
 src/
+docs/
 *.js
 tsconfig.json
 *.sh
