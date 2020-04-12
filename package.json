@@ -12,9 +12,13 @@
         "static": "build-storybook -c .storybook -o ./docs",
         "lint": "tslint --format stylish --project tsconfig.json \"src/**/*.ts?(x)\"",
         "test": "jest",
-        "release": "release-it"
+        "release": "release-it",
+        "docs:dev": "npx styleguidist server --config ./styleguide.config.js --verbose",
+        "docs:build": "npx styleguidist build --config ./styleguide.config.js --verbose"
     },
     "devDependencies": {
+        "react-styleguidist": "^11.0.5",
+        "react-docgen-typescript": "^1.16.3",
         "@babel/core": "^7.9.0",
         "@storybook/addon-actions": "^5.3.18",
         "@storybook/addon-console": "^1.2.1",
