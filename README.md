@@ -59,6 +59,7 @@ const onSort = (field: string) => {
 ## TODO
 
 -   Improve Docs & Examples.
+-   Pagination component.
 -   Handle more then 25 columns.
 
 ## Browser Support

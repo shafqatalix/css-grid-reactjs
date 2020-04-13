@@ -21,9 +21,10 @@ export const HeaderCell = (props: HeaderCellProps) => {
 
     const onClick = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            e.preventDefault();
             sortable && onSort(dataField);
         },
-        [sortable, dataField]
+        [sortable, dataField, onSort]
     );
 
     return (
