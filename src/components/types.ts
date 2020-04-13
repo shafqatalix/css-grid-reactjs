@@ -16,4 +16,9 @@ export type HeaderCellProps = DefaultElementProps & {
     onSort?: (dataField) => any;
 };
 
-export type RowProps = DefaultElementProps & {};
+export type RowProps = DefaultElementProps & {
+    hoverClassName?: string;
+    rowData?: any;
+    onHover?: (rowData?: any) => any;
+    onHoverExit?: (rowData?: any) => any;
+};
