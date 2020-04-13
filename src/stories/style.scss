@@ -1,3 +1,16 @@
-.hover-row {
-    background: #1ea7fd;
+.grid {
+    box-shadow: unset;
+}
+.cell {
+    padding: unset;
+    height: 30px;
+    padding: 15px 0px 0px 15px;
+}
+
+.header-cell {
+    height: 30px;
+    padding: 15px 0px 0px 15px;
+}
+.header-row {
+    border-radius: 0;
 }

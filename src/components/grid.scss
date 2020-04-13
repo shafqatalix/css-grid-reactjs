@@ -1,9 +1,8 @@
+@import "./variables.scss";
 .grid {
-  display: grid;
-  //justify-content: stretch;
-  margin: 0 auto;
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
-  align-items: top;
-  background: rgba(#fafafa, 0.9);
-  border-radius: 0.5rem;
+    display: grid;
+    //justify-content: stretch;
+    margin: 0 auto;
+    //override from consumer
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
 }

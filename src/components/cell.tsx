@@ -15,9 +15,10 @@ export const Cell = (props: CellProps) => {
 };
 
 export const HeaderCell = (props: HeaderCellProps) => {
-    const { overrideStyles, onSort, className, children, dataField } = props;
+    const { sortDirection = "asc", sortedBy, overrideStyles, onSort, className, children, dataField } = props;
     const sortable = !!onSort ? styles.sortable : null;
     const classes = makeClassName([styles.cell, styles.headerCell, className, sortable]);
+    const sorted = !!onSort && sortedBy === dataField;
 
     const onClick = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -29,7 +30,13 @@ export const HeaderCell = (props: HeaderCellProps) => {
 
     return (
         <div style={overrideStyles} onClick={onClick} className={classes}>
-            {children}
+            {!sorted && <div>{children}</div>}
+            {sorted && (
+                <div className={styles.sorted}>
+                    <div>{children}</div>
+                    <div className={styles[`sort-${sortDirection}`]}></div>
+                </div>
+            )}
         </div>
     );
 };

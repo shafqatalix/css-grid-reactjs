@@ -1,17 +1,51 @@
+@import "./variables.scss";
+
 .cell {
-  padding: 1rem;
-  word-break: break-word;
-  &:not(:last-child) {
-    border-right: 1px solid #ddd;
-  }
+    align-content: center;
+    padding: 1rem;
+    //override from consumer
+    //padding: 15px 0px 0px 15px;
+    //override from consumer
+    //height: $row-height;
+    vertical-align: middle;
+    word-break: break-word;
+    border-right: 1px solid $border-color;
+    &:first-child {
+        border-left: 1px solid $border-color;
+    }
 }
 
 .header-cell {
-  &:not(:last-child) {
-    border-right: 1px solid #ddcfcf;
-  }
+    //override from consumer
+    //height: $row-height;
+    vertical-align: middle;
+    color: white;
+    border-right: 1px solid $border-color;
+    &:last-child {
+        border-right: unset;
+    }
 }
 
 .sortable {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+.sorted {
+    display: flex;
+    margin: auto;
+}
+.sort-asc {
+    border: 5px solid transparent;
+    border-bottom-color: white;
+    //margin: 0px 10px 6px 0px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.sort-des {
+    border: 5px solid transparent;
+    border-top-color: white;
+    // margin: 6px 10px 0px 0px;
+    margin-top: 6px;
+    margin-left: 10px;
 }

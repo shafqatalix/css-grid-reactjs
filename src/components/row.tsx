@@ -15,6 +15,8 @@ export const HeaderRow = (props: RowProps) => {
 
     return (
         <Row
+            //@ts-ignore
+            isHeader={true}
             rowData={rowData}
             onHover={onHover}
             onHoverExit={onHoverExit}
@@ -36,8 +38,11 @@ export const Row = (props: RowProps) => {
     const onMouseOver = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
-            setCurrentHoverClass(hoverClassName);
-            onHover && onHover(rowData);
+            //@ts-ignore
+            if (!props.isHeader) {
+                setCurrentHoverClass(makeClassName([styles.defaultHoverRow, hoverClassName]));
+                onHover && onHover(rowData);
+            }
         },
         [rowData, hoverClassName]
     );

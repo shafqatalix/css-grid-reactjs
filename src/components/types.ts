@@ -14,6 +14,8 @@ export type HeaderCellProps = DefaultElementProps & {
     dataField: string;
     width?: number;
     onSort?: (dataField) => any;
+    sortedBy?: string;
+    sortDirection?: "asc" | "des";
 };
 
 export type RowProps = DefaultElementProps & {
