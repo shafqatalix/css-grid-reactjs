@@ -13,6 +13,10 @@
     &:first-child {
         border-left: 1px solid $border-color;
     }
+    //
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .header-cell {

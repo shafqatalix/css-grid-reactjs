@@ -3,10 +3,12 @@ import React, { useCallback, useState } from "react";
 import { HeaderRow, HeaderCell, Cell, Grid, Row } from ".."; //"css-grid-reactjs"
 import { userData } from "../mocked-data";
 import style from "./style.scss";
+import { utils } from "../";
 
 const StylingExample = () => {
+    const [currentData, setCurrentData] = useState<any>(userData);
     const [sortedBy, setSortedBy] = useState<any>(null);
-    const [sortDirection, setSortDirection] = useState<any>(null);
+    const [sortDirection, setSortDirection] = useState<utils.SortDirection | null>(null);
 
     const onHover = useCallback((rowData: any) => {
         console.log(rowData);
@@ -14,17 +16,23 @@ const StylingExample = () => {
 
     const onSort = useCallback(
         (field: string) => {
-            const direction = sortDirection === "asc" ? "des" : "asc";
+            const direction =
+                sortDirection === utils.SortDirection.Ascending
+                    ? utils.SortDirection.Descending
+                    : utils.SortDirection.Ascending;
             setSortedBy(field);
             setSortDirection(direction);
+            const data = Object.assign({}, currentData);
+            data.dataRows = utils.sort<any>(data.dataRows, field, direction);
+            setCurrentData(data);
         },
-        [sortedBy, sortDirection]
+        [sortedBy, sortDirection, currentData]
     );
 
     return (
         <Grid className={style.grid}>
             <HeaderRow className={style.headerRow}>
-                {userData.headerRow.map(header => (
+                {currentData.headerRow.map(header => (
                     <HeaderCell
                         sortedBy={sortedBy}
                         sortDirection={sortDirection}
@@ -37,7 +45,7 @@ const StylingExample = () => {
                     </HeaderCell>
                 ))}
             </HeaderRow>
-            {userData.dataRows.map((row, i) => (
+            {currentData.dataRows.map((row, i) => (
                 <Row rowData={row} onHover={onHover} key={i} hoverClassName={style.hoverRow}>
                     <Cell className={style.cell}>{row.name}</Cell>
                     <Cell className={style.cell}>{row.address}</Cell>

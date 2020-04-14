@@ -5,30 +5,35 @@ import { userData } from "../mocked-data";
 
 const SortingExample = () => {
     const [currentData, setCurrentData] = useState<any>(userData);
-    const [sortField, setSortField] = useState<any>(null);
-    const [direction, setDirection] = useState<any>(null);
+    const [sortedBy, setSortedBy] = useState<any>(null);
+    const [sortDirection, setSortDirection] = useState<utils.SortDirection | null>(null);
 
     const onSort = useCallback(
         (field: string) => {
-            let targetDirection: any = "asc";
-            if (sortField === field) {
-                targetDirection = direction === "asc" ? "desc" : "asc";
-            }
-            setSortField(field);
-            setDirection(targetDirection);
+            const direction =
+                sortDirection === utils.SortDirection.Ascending
+                    ? utils.SortDirection.Descending
+                    : utils.SortDirection.Ascending;
+            setSortedBy(field);
+            setSortDirection(direction);
             const data = Object.assign({}, currentData);
-            data.dataRows = utils.sort<any>(data.dataRows, field, targetDirection);
+            data.dataRows = utils.sort<any>(data.dataRows, field, direction);
             setCurrentData(data);
-            console.log(`field:${field}, sortedBy:${sortField}, direction:${direction} `);
         },
-        [direction, sortField, currentData]
+        [sortDirection, sortedBy, currentData]
     );
 
     return (
         <Grid>
             <HeaderRow>
                 {currentData.headerRow.map((header, i) => (
-                    <HeaderCell key={header.dataField} onSort={onSort} dataField={header.dataField}>
+                    <HeaderCell
+                        sortDirection={sortDirection}
+                        sortedBy={sortedBy}
+                        key={header.dataField}
+                        onSort={onSort}
+                        dataField={header.dataField}
+                    >
                         {header.label}
                     </HeaderCell>
                 ))}

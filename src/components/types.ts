@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { SortDirection } from "../utils";
 
 type DefaultElementProps = {
     overrideStyles?: CSSProperties;
@@ -15,7 +16,7 @@ export type HeaderCellProps = DefaultElementProps & {
     width?: number;
     onSort?: (dataField) => any;
     sortedBy?: string;
-    sortDirection?: "asc" | "des";
+    sortDirection?: SortDirection;
 };
 
 export type RowProps = DefaultElementProps & {

@@ -1,3 +1,8 @@
+export enum SortDirection {
+    Ascending = "asc",
+    Descending = "des",
+}
+
 export const makeClassName = (args: string[]): string => {
     return args.join(" ");
 };
@@ -28,8 +33,8 @@ export const sortDesc = (a: any, b: any) => {
     return 0;
 };
 
-export function sort<T>(data: Array<T>, field: string, direction?: "asc" | "desc") {
-    const sortFn = direction === "desc" ? sortDesc : sortAsc;
+export function sort<T>(data: Array<T>, field: string, direction: SortDirection) {
+    const sortFn = direction === SortDirection.Descending ? sortDesc : sortAsc;
     const sorted = data.sort((a, b) => {
         const first = a[field];
         const second = b[field];
