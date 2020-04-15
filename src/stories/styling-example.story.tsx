@@ -11,7 +11,11 @@ const StylingExample = () => {
     const [sortDirection, setSortDirection] = useState<utils.SortDirection | null>(null);
 
     const onHover = useCallback((rowData: any) => {
-        console.log(rowData);
+        console.log("onHover");
+    }, []);
+
+    const onClick = useCallback((rowData: any) => {
+        console.log("onClick");
     }, []);
 
     const onSort = useCallback(
@@ -46,7 +50,7 @@ const StylingExample = () => {
                 ))}
             </HeaderRow>
             {currentData.dataRows.map((row, i) => (
-                <Row rowData={row} onHover={onHover} key={i} hoverClassName={style.hoverRow}>
+                <Row onClick={onClick} rowData={row} onHover={onHover} key={i} hoverClassName={style.hoverRow}>
                     <Cell className={style.cell}>{row.name}</Cell>
                     <Cell className={style.cell}>{row.address}</Cell>
                     <Cell className={style.cell}>{row.city}</Cell>

@@ -7,10 +7,11 @@ import { makeClassName } from "../utils";
 export const HeaderRow = (props: RowProps) => {
     const { rowData, onHover, onHoverExit, hoverClassName, className, children, overrideStyles } = props;
     const context = useContext(GridContext);
-    const classes = `${styles.headerRow} ${className || ""} `;
+    const classes = makeClassName([styles.headerRow, className]);
 
     useEffect(() => {
-        context.setColumnCount(React.Children.count(children));
+        let count = React.Children.toArray(children).length;
+        context.setColumnCount(count);
     }, [children]);
 
     return (
@@ -30,7 +31,9 @@ export const HeaderRow = (props: RowProps) => {
 };
 
 export const Row = (props: RowProps) => {
-    const { rowData, onHover, onHoverExit, className, hoverClassName, children, overrideStyles } = props;
+    ///@ts-ignore
+    const isHeader = props.isHeader;
+    const { onClick, rowData, onHover, onHoverExit, className, hoverClassName, children, overrideStyles } = props;
     const [currentHoverClass, setCurrentHoverClass] = useState<string>("");
     const context = useContext(GridContext);
     const columnsClass = styles[`columns-${context.columnCount}`];
@@ -39,25 +42,41 @@ export const Row = (props: RowProps) => {
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
             //@ts-ignore
-            if (!props.isHeader) {
+            if (!isHeader) {
                 setCurrentHoverClass(makeClassName([styles.defaultHoverRow, hoverClassName]));
-                onHover && onHover(rowData);
             }
+            onHover && onHover(rowData);
         },
-        [rowData, hoverClassName]
+        [rowData, hoverClassName, isHeader]
     );
 
     const onMouseOut = useCallback(
         (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             e.preventDefault();
-            setCurrentHoverClass("");
+            if (!isHeader) {
+                setCurrentHoverClass("");
+            }
             onHoverExit && onHoverExit(rowData);
         },
-        [rowData, hoverClassName]
+        [rowData, hoverClassName, isHeader]
+    );
+
+    const onClickHandler = useCallback(
+        (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            e.preventDefault();
+            onClick && onClick(rowData);
+        },
+        [rowData, onClick]
     );
 
     return (
-        <div onMouseOver={onMouseOver} onMouseOut={onMouseOut} style={overrideStyles} className={classes}>
+        <div
+            onClick={onClickHandler}
+            onMouseOver={onMouseOver}
+            onMouseOut={onMouseOut}
+            style={overrideStyles}
+            className={classes}
+        >
             {children}
         </div>
     );

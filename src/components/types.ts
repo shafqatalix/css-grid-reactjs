@@ -24,4 +24,5 @@ export type RowProps = DefaultElementProps & {
     rowData?: any;
     onHover?: (rowData?: any) => any;
     onHoverExit?: (rowData?: any) => any;
+    onClick?: (rowData?: any) => any;
 };
