@@ -20,8 +20,6 @@
 }
 
 .header-cell {
-    //override from consumer
-    //height: $row-height;
     vertical-align: middle;
     color: white;
     border-right: 1px solid $border-color;
@@ -41,7 +39,6 @@
 .sort-asc {
     border: 5px solid transparent;
     border-bottom-color: white;
-    //margin: 0px 10px 6px 0px;
     margin-bottom: 5px;
     margin-left: 10px;
 }
@@ -49,7 +46,6 @@
 .sort-des {
     border: 5px solid transparent;
     border-top-color: white;
-    // margin: 6px 10px 0px 0px;
     margin-top: 6px;
     margin-left: 10px;
 }

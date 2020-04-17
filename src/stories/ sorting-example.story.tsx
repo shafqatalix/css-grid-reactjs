@@ -2,6 +2,7 @@ import { storiesOf } from "@storybook/react";
 import React, { useCallback, useState } from "react";
 import { HeaderRow, HeaderCell, Cell, Grid, Row, utils } from ".."; //"css-grid-reactjs"
 import { userData } from "../mocked-data";
+import style from "./sorting-example.scss";
 
 const SortingExample = () => {
     const [currentData, setCurrentData] = useState<any>(userData);
@@ -24,8 +25,8 @@ const SortingExample = () => {
     );
 
     return (
-        <Grid>
-            <HeaderRow>
+        <Grid className={style.grid}>
+            <HeaderRow className={style.headerRow}>
                 {currentData.headerRow.map((header, i) => (
                     <HeaderCell
                         sortDirection={sortDirection}

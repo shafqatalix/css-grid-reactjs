@@ -1,8 +1,5 @@
 @import "./variables.scss";
 .grid {
     display: grid;
-    //justify-content: stretch;
     margin: 0 auto;
-    //override from consumer
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
 }

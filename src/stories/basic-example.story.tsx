@@ -1,10 +1,11 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { HeaderRow, HeaderCell, Cell, Grid, Row } from ".."; //"css-grid-reactjs"
+import style from "./basic-example.scss";
 
 const BasicExample = () => {
     return (
-        <Grid>
+        <Grid className={style.grid}>
             <HeaderRow>
                 <HeaderCell dataField="name">Name</HeaderCell>
                 <HeaderCell dataField="address">Address</HeaderCell>
