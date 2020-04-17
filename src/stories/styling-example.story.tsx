@@ -2,7 +2,7 @@ import { storiesOf } from "@storybook/react";
 import React, { useCallback, useState } from "react";
 import { HeaderRow, HeaderCell, Cell, Grid, Row } from ".."; //"css-grid-reactjs"
 import { userData } from "../mocked-data";
-import style from "./style.scss";
+import style from "./styling-example.scss";
 import { utils } from "../";
 
 const StylingExample = () => {
@@ -50,7 +50,14 @@ const StylingExample = () => {
                 ))}
             </HeaderRow>
             {currentData.dataRows.map((row, i) => (
-                <Row onClick={onClick} rowData={row} onHover={onHover} key={i} hoverClassName={style.hoverRow}>
+                <Row
+                    className={style.row}
+                    onClick={onClick}
+                    rowData={row}
+                    onHover={onHover}
+                    key={i}
+                    hoverClassName={style.hoverRow}
+                >
                     <Cell className={style.cell}>{row.name}</Cell>
                     <Cell className={style.cell}>{row.address}</Cell>
                     <Cell className={style.cell}>{row.city}</Cell>

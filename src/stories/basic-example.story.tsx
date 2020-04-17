@@ -3,21 +3,12 @@ import { storiesOf } from "@storybook/react";
 import { HeaderRow, HeaderCell, Cell, Grid, Row } from ".."; //"css-grid-reactjs"
 
 const BasicExample = () => {
-    const onSort = (field: string) => {
-        console.log(`onSort has been called for data-field:${field}`);
-    };
     return (
         <Grid>
             <HeaderRow>
-                <HeaderCell onSort={onSort} dataField="name">
-                    Name
-                </HeaderCell>
-                <HeaderCell onSort={onSort} dataField="address">
-                    Address
-                </HeaderCell>
-                <HeaderCell onSort={onSort} dataField="city">
-                    City
-                </HeaderCell>
+                <HeaderCell dataField="name">Name</HeaderCell>
+                <HeaderCell dataField="address">Address</HeaderCell>
+                <HeaderCell dataField="city">City</HeaderCell>
                 <HeaderCell dataField="state">State</HeaderCell>
                 <HeaderCell dataField="zip">Zip</HeaderCell>
                 <HeaderCell dataField="year">Year</HeaderCell>

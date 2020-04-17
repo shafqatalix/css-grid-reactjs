@@ -1,0 +1,6 @@
+.grid {
+    .row,
+    .header-row {
+        grid-template-columns: 40fr 30fr 10fr 10fr 10fr;
+    }
+}
