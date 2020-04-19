@@ -3,17 +3,12 @@
 .cell {
     align-content: center;
     padding: 1rem;
-    //override from consumer
-    //padding: 15px 0px 0px 15px;
-    //override from consumer
-    //height: $row-height;
     vertical-align: middle;
     word-break: break-word;
     border-right: 1px solid $border-color;
     &:first-child {
         border-left: 1px solid $border-color;
     }
-    //
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -21,7 +16,7 @@
 
 .header-cell {
     vertical-align: middle;
-    color: white;
+    color: $header-text-color;
     border-right: 1px solid $border-color;
     &:last-child {
         border-right: unset;
@@ -38,14 +33,14 @@
 }
 .sort-asc {
     border: 5px solid transparent;
-    border-bottom-color: white;
+    border-bottom-color: $sort-icon-color;
     margin-bottom: 5px;
     margin-left: 10px;
 }
 
 .sort-des {
     border: 5px solid transparent;
-    border-top-color: white;
+    border-top-color: $sort-icon-color;
     margin-top: 6px;
     margin-left: 10px;
 }

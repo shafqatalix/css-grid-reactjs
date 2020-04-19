@@ -54,13 +54,13 @@ const onSort = (field: string) => {
 -   Simple and liner API.
 -   Responsive by default without any additional css.
 -   Allow full customization of styles.
--   Supports up to 25 grid columns without distorting UI.
+-   Supports up to 30 grid columns without distorting UI.
 
 ## TODO
 
 -   Improve Docs & Examples.
 -   Pagination component.
--   Handle more then 25 columns.
+-   Add unit-tests.
 
 ## Browser Support
 
