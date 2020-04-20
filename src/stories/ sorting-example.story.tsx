@@ -45,7 +45,7 @@ const SortingExample = () => {
                     <Cell>{row.address}</Cell>
                     <Cell>{row.city}</Cell>
                     <Cell>{row.state}</Cell>
-                    <Cell>{row.zip}</Cell>
+                    <Cell>{row.score}</Cell>
                 </Row>
             ))}
         </Grid>

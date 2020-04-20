@@ -62,7 +62,7 @@ const StylingExample = () => {
                     <Cell className={style.cell}>{row.address}</Cell>
                     <Cell className={style.cell}>{row.city}</Cell>
                     <Cell className={style.cell}>{row.state}</Cell>
-                    <Cell className={style.cell}>{row.zip}</Cell>
+                    <Cell className={style.cell}>{row.score}</Cell>
                 </Row>
             ))}
         </Grid>

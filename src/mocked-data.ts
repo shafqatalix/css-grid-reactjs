@@ -17,8 +17,8 @@ export const userData = {
             label: "State",
         },
         {
-            dataField: "zip",
-            label: "Zip",
+            dataField: "score",
+            label: "Score",
         },
     ],
     dataRows: [
@@ -27,28 +27,28 @@ export const userData = {
             address: "23 Randolph St",
             city: "San Francisco",
             state: "CA",
-            zip: "1234",
+            score: 100,
         },
         {
             name: "Dexter White",
             address: "918 Windsor Avenue",
             city: "Ashland",
             state: "OH",
-            zip: "44805",
+            score: 50,
         },
         {
             name: "Henrietta Burke",
             address: "40 Hilldale Ave",
             city: "Atlanta",
             state: "GA",
-            zip: "30303",
+            score: "30303",
         },
         {
             name: "Mary Elliott",
             address: "386 Trusel St",
             city: "Newburgh",
             state: "NY",
-            zip: "12550",
+            score: 300,
         },
 
         {
@@ -56,7 +56,7 @@ export const userData = {
             address: "8 Griffin Court",
             city: "Middletown",
             state: "CT",
-            zip: "06457",
+            score: 12,
         },
     ],
 };

@@ -11,7 +11,7 @@ export const guid = () => {
     return "uuid-" + (new Date().getTime().toString(16) + Math.floor(1e7 * Math.random()).toString(16));
 };
 
-export const sortAsc = (a: any, b: any) => {
+export const sortDesc = (a: any, b: any) => {
     if (a < b) {
         return -1;
     }
@@ -22,7 +22,7 @@ export const sortAsc = (a: any, b: any) => {
     return 0;
 };
 
-export const sortDesc = (a: any, b: any) => {
+export const sortAsc = (a: any, b: any) => {
     if (a > b) {
         return -1;
     }
