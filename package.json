@@ -1,6 +1,6 @@
 {
     "name": "css-grid-reactjs",
-    "version": "0.2.1",
+    "version": "1.0.0",
     "main": "dist/index.js",
     "scripts": {
         "all": "npm run build && npm run storybook:build && npm run docs:build",
