@@ -11,10 +11,7 @@ const SortingExample = () => {
 
     const onSort = useCallback(
         (field: string) => {
-            const direction =
-                sortDirection === utils.SortDirection.Ascending
-                    ? utils.SortDirection.Descending
-                    : utils.SortDirection.Ascending;
+            let direction = utils.toggleDirection(sortDirection);
             setSortedBy(field);
             setSortDirection(direction);
             const data = Object.assign({}, currentData);

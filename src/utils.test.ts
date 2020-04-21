@@ -1,4 +1,4 @@
-const { makeClassName, sortAsc, sortDesc } = require("./utils");
+const { makeClassName, sort, SortDirection, toggleDirection } = require("./utils");
 
 describe("makeClassNames()", () => {
     it("empty classes", () => {
@@ -13,15 +13,46 @@ describe("makeClassNames()", () => {
         expect(makeClassName(["a", "b"])).toBe("a b");
     });
 
+    it("toggleDirection", () => {
+        expect(toggleDirection(SortDirection.Ascending)).toBe(SortDirection.Descending);
+        expect(toggleDirection(SortDirection.Descending)).toBe(SortDirection.Ascending);
+    });
+
     it("sortAsc", () => {
-        const input = [10, 5, 2];
-        const output = input.sort(sortAsc);
-        expect(output[0]).toBe(2);
+        const input = [
+            {
+                rank: 41,
+            },
+            {
+                rank: 6,
+            },
+            {
+                rank: 671,
+            },
+            {
+                rank: 87,
+            },
+        ];
+        const output = sort(input, "rank", SortDirection.Ascending);
+        expect(output[0].rank).toBe(6);
     });
 
     it("sortDesc", () => {
-        const input = [2, 5, 45];
-        const output = input.sort(sortDesc);
-        expect(output[0]).toBe(45);
+        const input = [
+            {
+                rank: 41,
+            },
+            {
+                rank: 6,
+            },
+            {
+                rank: 671,
+            },
+            {
+                rank: 87,
+            },
+        ];
+        const output = sort(input, "rank", SortDirection.Descending);
+        expect(output[0].rank).toBe(671);
     });
 });

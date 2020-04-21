@@ -15,15 +15,7 @@ export const Cell = (props: CellProps) => {
 };
 
 export const HeaderCell = (props: HeaderCellProps) => {
-    const {
-        sortDirection = SortDirection.Ascending,
-        sortedBy,
-        overrideStyles,
-        onSort,
-        className,
-        children,
-        dataField,
-    } = props;
+    const { sortDirection, sortedBy, overrideStyles, onSort, className, children, dataField } = props;
     const sortable = !!onSort ? styles.sortable : null;
     const classes = makeClassName([styles.cell, styles.headerCell, className, sortable]);
     const sorted = !!onSort && sortedBy === dataField;
@@ -35,7 +27,7 @@ export const HeaderCell = (props: HeaderCellProps) => {
         },
         [sortable, dataField, onSort]
     );
-    const sortedClass = sortDirection === SortDirection.Ascending ? styles.sortDes : styles.sortAsc;
+    const sortedClass = sortDirection === SortDirection.Descending ? styles.sortDes : styles.sortAsc;
     return (
         <div style={overrideStyles} onClick={onClick} className={classes}>
             {!sorted && <div>{children}</div>}
