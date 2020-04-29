@@ -14,3 +14,9 @@
 .header-row {
     border-radius: 0.5rem 0.5rem 0 0;
 }
+
+.row {
+    &:hover {
+        background: silver;
+    }
+}

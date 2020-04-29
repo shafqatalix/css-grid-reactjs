@@ -11,6 +11,9 @@
     &:last-child {
         border-bottom: 1px solid $border-color;
     }
+    &:hover {
+        background: $row-hover-color;
+    }
 }
 
 .header-row {
@@ -19,10 +22,9 @@
     font-weight: bold;
     background: $header-color;
     font-weight: bold;
-}
-
-.default-hover-row {
-    background: $row-hover-color;
+    &:hover {
+        background: $header-color;
+    }
 }
 
 //Columns

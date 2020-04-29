@@ -20,7 +20,6 @@ export type HeaderCellProps = DefaultElementProps & {
 };
 
 export type RowProps = DefaultElementProps & {
-    hoverClassName?: string;
     rowData?: any;
     onHover?: (rowData?: any) => any;
     onHoverExit?: (rowData?: any) => any;
