@@ -26,6 +26,20 @@ module.exports = {
                     test: /\.scss$/,
                     use: [MiniCssExtractPlugin.loader, CSSModuleLoader, postCSSLoader, "sass-loader"],
                 },
+                {
+                    test: /\.css$/,
+                    include: /node_modules/,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        {
+                            loader: "css-loader",
+                            options: {
+                                modules: false,
+                                sourceMap: true,
+                            },
+                        },
+                    ],
+                },
             ],
         },
         plugins: [new MiniCssExtractPlugin()],
