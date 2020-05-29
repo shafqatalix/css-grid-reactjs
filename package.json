@@ -2,6 +2,9 @@
     "name": "css-grid-reactjs",
     "version": "1.0.1",
     "main": "dist/index.js",
+    "sideEffects": [
+        "*.css"
+    ],
     "scripts": {
         "all": "npm run build && npm run storybook:build && npm run docs:build",
         "precommit": "lint-staged",
