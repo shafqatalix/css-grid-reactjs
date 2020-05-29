@@ -20,6 +20,9 @@
         "docs:dev": "npx styleguidist server --config ./styleguide.config.js --verbose",
         "docs:build": "npx styleguidist build --config ./styleguide.config.js --verbose"
     },
+    "dependencies": {
+        "simplebar-react": "2.2.0"
+    },
     "devDependencies": {
         "react-styleguidist": "^11.0.5",
         "react-docgen-typescript": "^1.16.3",
@@ -47,6 +50,7 @@
         "optimize-css-assets-webpack-plugin": "^5.0.3",
         "postcss": "7.0.27",
         "postcss-loader": "^3.0.0",
+        "css-loader": "^3.5.3",
         "prettier": "1.19.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",

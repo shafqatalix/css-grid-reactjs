@@ -47,12 +47,12 @@ const onSort = (field: string) => {
 
 ## Features
 
--   No external dependencies.
 -   Typescript support.
 -   No media queries, purely based on css-grid spec.
 -   Fully declarative.
 -   Simple and liner API.
 -   Responsive by default without any additional css.
+-   Allows Fixed size gird with scrollbar on content overflow.
 -   Allow full customization of styles.
 -   Supports up to 30 grid columns without distorting UI.
 

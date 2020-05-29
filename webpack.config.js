@@ -20,6 +20,20 @@ const config = {
                 use: [MiniCssExtractPlugin.loader, CSSModuleLoader, postCSSLoader, "sass-loader"],
             },
             {
+                test: /\.css$/,
+                include: /node_modules/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: false,
+                            sourceMap: true,
+                        },
+                    },
+                ],
+            },
+            {
                 test: /\.tsx?$/,
                 include: path.resolve(__dirname, "./src"),
                 use: [

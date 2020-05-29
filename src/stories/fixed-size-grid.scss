@@ -1,0 +1,22 @@
+.grid {
+    margin-bottom: 10px;
+    .row,
+    .header-row {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+}
+.name {
+    width: 500px;
+}
+.address {
+    width: 700px;
+}
+.city {
+    width: 400px;
+}
+.state {
+    width: 80px;
+}
+.score {
+    width: 200px;
+}
