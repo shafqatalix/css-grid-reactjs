@@ -97,4 +97,77 @@ describe("makeClassNames()", () => {
         expect(output[1].rank).toBe(57);
         expect(output[2].rank).toBe(133);
     });
+
+    it("Smart with Date fields: Asc", () => {
+        const input = [
+            {
+                startDate: "08 Apr 2018",
+            },
+            {
+                startDate: "19 Dec 2098",
+            },
+            {
+                startDate: "22 Jan 2019",
+            },
+        ];
+        const output = sortSmart(input, "startDate", SortDirection.Ascending);
+        expect(output[0].startDate).toBe("08 Apr 2018");
+        expect(output[2].startDate).toBe("19 Dec 2098");
+    });
+
+    it("Smart with Date fields: Des", () => {
+        const input = [
+            {
+                startDate: "08 Apr 2018",
+            },
+            {
+                startDate: "19 Dec 2098",
+            },
+            {
+                startDate: "22 Jan 2019",
+            },
+        ];
+        const output = sortSmart(input, "startDate", SortDirection.Descending);
+        expect(output[0].startDate).toBe("19 Dec 2098");
+        expect(output[2].startDate).toBe("08 Apr 2018");
+    });
+
+    it("Smart with Date fields with custom fieldNameRegex: Asc", () => {
+        const input = [
+            {
+                start: "08 Apr 2018",
+            },
+            {
+                start: "19 Dec 2098",
+            },
+            {
+                start: "22 Jan 2019",
+            },
+        ];
+        const output = sortSmart(input, "start", SortDirection.Ascending, {
+            dateFieldRegex: /start/i,
+        });
+        expect(output[0].start).toBe("08 Apr 2018");
+        expect(output[2].start).toBe("19 Dec 2098");
+    });
+
+    it("Smart with Date fields with custom fieldNameRegex: Des", () => {
+        const input = [
+            {
+                start: "08 Apr 2018",
+            },
+            {
+                start: "19 Dec 2098",
+            },
+            {
+                start: "22 Jan 2019",
+            },
+        ];
+        const output = sortSmart(input, "start", SortDirection.Descending, {
+            dateFieldRegex: /start/i,
+        });
+
+        expect(output[0].start).toBe("19 Dec 2098");
+        expect(output[2].start).toBe("08 Apr 2018");
+    });
 });
