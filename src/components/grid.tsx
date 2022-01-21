@@ -7,7 +7,7 @@ import { makeClassName } from "../utils";
 export const Grid = (props: GridProps) => {
     const { children, className, overrideStyles } = props;
 
-    const [columnCount, setColumnCount] = useState<number>(0);
+    const [columnCount, setColumnCount] = useState<number>(props.columnCount || 0);
     const classes = makeClassName([styles.grid, className]);
 
     return (

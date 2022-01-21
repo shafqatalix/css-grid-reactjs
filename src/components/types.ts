@@ -7,7 +7,7 @@ type DefaultElementProps = {
     children?: any;
 };
 
-export type GridProps = DefaultElementProps & {};
+export type GridProps = DefaultElementProps & {columnCount?:number};
 
 export type CellProps = DefaultElementProps & {};
 
